@@ -7,15 +7,12 @@ import com.example.libreria_miguelon.user.Usuario;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 
-public record DatosAutor(
-        @NotBlank String nombre,
-        @NotNull int nacimiento,
-        @NotNull DatosUsuario usuario
-
-        ) {
+public record DatosAutor(String nombre, int nacimiento, DatosUsuario usuario) {
     public DatosAutor(Autor autor) {
-        this(autor.getNombre(), autor.getNacimiento(), new DatosUsuario(autor.getUsuario()));
+        this(
+                autor.getNombre(),
+                autor.getNacimiento(),
+                autor.getUsuario() != null ? new DatosUsuario(autor.getUsuario()) : new DatosUsuario("N/A")
+        );
     }
-
-
 }
