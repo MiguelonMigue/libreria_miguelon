@@ -1,9 +1,11 @@
-import React from 'react'
+import { FaFacebook, FaInstagram, FaDiscord } from "react-icons/fa"
 
 const Footer = () => {
   return (
-    <div>
-      
+    <div className="pie_de_pagina">
+      <FaDiscord/>
+      <FaInstagram/>
+      <FaFacebook/>
     </div>
   )
 }

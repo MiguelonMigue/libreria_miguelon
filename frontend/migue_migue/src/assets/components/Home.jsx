@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Table, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Header from './Header';
+import Footer from './Footer'
 
 const Home = () => {
   const [libros, setLibros] = useState([]);
@@ -87,9 +89,10 @@ const handleSubmit = async (e) => {
     : libros.filter((l) => l.titulo?.toLowerCase().includes(busqueda.toLowerCase()));
 
   return (
-    
     <div className="container mt-4">
-      <h2>Multimedia de libros</h2>
+      <Header/>
+
+      <h3 className='titulo_secundario'>Multimedia de libros</h3>
       <input
         className="form-control mb-3"
         placeholder="Buscar libro..."
@@ -152,6 +155,7 @@ const handleSubmit = async (e) => {
           <button className="btn btn-secondary" onClick={() => setModalInsertar(false)}>Cancelar</button>
         </ModalFooter>
       </Modal>
+      <Footer/>
     </div>
   );
 };
