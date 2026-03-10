@@ -2,5 +2,15 @@
   "dependencies": {
     "bootstrap": "^5.3.8",
     "react-bootstrap": "^2.10.10"
-  }
+  },
+  "devDependencies": {
+    "gh-pages": "^6.3.0"
+  },
+  "scripts": {
+  "dev": "vite",
+  "build": "vite build",
+  "deploy": "gh-pages -d dist"
 }
+  
+}
+
